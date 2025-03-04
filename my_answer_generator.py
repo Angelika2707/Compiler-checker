@@ -27,9 +27,7 @@ def generate_jar_answer(input_file):
         return result, error, exit_code
 
 
+# TODO: В зависимости от того как выводит твоя программа ошибки нужно написать регулярное выражение
 def parse_jar_answer(answer):
     error_tags = re.findall(r"java\.lang\.RuntimeException: (\S+)", answer[1])
     return error_tags, answer[2]
-
-
-# print(parse_jar_answer(generate_jar_answer("1.stella")))

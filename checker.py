@@ -49,20 +49,20 @@ def compare_results(type_tests):
 
 init(autoreset=True)
 
+# TODO: Какая именно нужна неделя, если все нужны то просто нужно оставить пустую строку ""
 current_week = r"\week-2"
+
 all_files = get_all_files("tests" + current_week)
 
 extra_tests = list(filter(lambda file: "extra" in file, all_files.copy()))
 main_tests = list(filter(lambda file: "main" in file, all_files.copy()))
 
-main_tests_flag = False
-extra_tests_flag = True
+# TODO: Флаги какие тесты нужно проходить
+main_tests_flag = True
+extra_tests_flag = False
 
 all_extra_tests = len(extra_tests)
 all_main_tests = len(main_tests)
-
-all_passed_extra_tests = 0
-all_passed_main_tests = 0
 
 if main_tests_flag:
     all_passed_main_tests = compare_results(main_tests)
